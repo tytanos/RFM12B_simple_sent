@@ -37,14 +37,17 @@ void loop () {
 pomiar.bat = getbat();
   rf12_sleep(RF12_WAKEUP);
     rf12_recvDone();
+    
     if (rf12_canSend() && sendTimer.poll(4000)) {
       rf12_sendStart(0, &pomiar, sizeof pomiar,1);
 
-
-
+    // set the sync mode to 2 if the fuses are still the Arduino default
+    // mode 3 (full powerdown) can only be used with 258 CK startup fuses
+    rf12_sendWait(2);
+    
+    
   pomiar.lp += 1;
     
-
     }
   rf12_sleep(RF12_SLEEP);
   
