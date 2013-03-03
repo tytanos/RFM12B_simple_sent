@@ -67,7 +67,7 @@ int getbat(void){
   pinMode(5, OUTPUT);
   digitalWrite(5, HIGH);
   delay(20);
-  vbat=map(analogRead(A0),0,1023,0,3416);
+  vbat=map(analogRead(A0),0,1023,0,3416); // potrzebny dzielnik z rezystorów 10k (D5-A0) oraz 4,7k (A0-GND), układ dobrany dla zasilania od2,0V do 3,3V
   digitalWrite(5, LOW);
   pinMode(5, INPUT);
   analogReference(DEFAULT);
