@@ -53,7 +53,7 @@ while (!rf12_canSend())
   
   pomiar.lp += 1;
   
-Sleepy::loseSomeTime(2000);
+Sleepy::loseSomeTime(2000); // czas uśpienia czujki do kolejnego pimiaru i wysyłki danych
   
 
 }
