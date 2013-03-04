@@ -23,6 +23,7 @@ void setup () {
   rf12_initialize(1, RF12_433MHZ, 210);
   pinMode(9, OUTPUT);
   pomiar.lp=0;
+  rf12_control(0xA753); // Frequency =434.6875MHz // mało zaszumiona częstotliwość
   rf12_control(0xC040); // bateria alarm
   rf12_control(0xC691); //bitrate 2.395kbps
 //rf12_control(0xC688); // bitrate 4.789kbps
